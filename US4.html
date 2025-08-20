@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer System</title>
+    <link rel="stylesheet" href="US4.css">
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label>User ID:</label>
+            <input type="text" id="loginUserId" required>
+            <label>Password:</label>
+            <input type="password" id="loginPassword" required>
+            <button type="button" onclick="loginUser()">Login</button>
+        </form>
+    </div>
+
+      
+     
+      </script>
+    <div id="homePage" style="display: none;">
+        <div class="navbar">
+            <a href="#" onclick="showHome()">Home</a>
+            <a href="#" onclick="showPayBill()">Pay Bill</a>
+            <a href="#" onclick="showRegisterComplaint()">Register Complaint</a>
+            <a href="#" onclick="showComplaintStatus()">Complaint Status</a>
+            <span class="right">Welcome, <span id="welcomeUser"></span> | <a href="#" onclick="logoutUser()">Logout</a></span>
+        </div>
+        <div class="container" id="billContainer" style="display: none;">
+            <h2>Pay Bill</h2>
+            <input type="checkbox" class="bill" value="50" onclick="calculateTotal()"> Bill 1 - $50 <br>
+            <input type="checkbox" class="bill" value="30" onclick="calculateTotal()"> Bill 2 - $30 <br>
+            <input type="checkbox" class="bill" value="20" onclick="calculateTotal()"> Bill 3 - $20 <br>
+            <p>Bill Amount: $<span id="billAmount">0</span></p>
+            <p>PG Charge: $5</p>
+            <p>Total Payable Amount: $<span id="totalAmount">5</span></p>
+            <label>Mode of Payment:</label>
+            <select id="paymentMode">
+                <option>Debit Card</option>
+                <option>Credit Card</option>
+            </select>
+            <button onclick="proceedToPayment()">Pay Now</button>
+            <button onclick="showHome()">Back to Home</button>
+        </div>
+    </div>
+
+    <div class="container" id="registerComplaintContainer" style="display: none;">
+        <h2>Register Complaint/Service</h2>
+        <label>Complaint/Service Type:</label>
+        <select id="complaintType">
+            <option>Billing related</option>
+            <option>Voltage related</option>
+            <option>Frequent disruption</option>
+            <option>Street light related</option>
+            <option>Pole related</option>
+        </select>
+        <label>Category:</label>
+        <select id="complaintCategory">
+            <option>Billing related</option>
+            <option>Voltage related</option>
+            <option>Frequent disruption</option>
+            <option>Street light related</option>
+            <option>Pole related</option>
+        </select>
+        <label>Contact Person:</label>
+        <input type="text" id="contactPerson">
+        <label>Landmark:</label>
+        <input type="text" id="landmark">
+        <label>Consumer No:</label>
+        <input type="text" id="consumerNo" pattern="\d{13}" required>
+        <label>Problem Description:</label>
+        <textarea id="problemDescription"></textarea>
+        <label>Mobile Number:</label>
+        <input type="text" id="mobileNumber" pattern="\d{10}" required>
+        <label>Address:</label>
+        <textarea id="address"></textarea>
+        <button onclick="submitComplaint()">Submit Complaint</button>
+        <button onclick="resetComplaintForm()">Cancel</button>
+    </div>
+
+    <script src="US4.js">
+    </script>
+</body>
+</html>

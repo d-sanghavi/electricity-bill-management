@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer System</title>
+    <link rel="stylesheet" href="US2.css">
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label>User ID:</label>
+            <input type="text" id="loginUserId" required>
+            <label>Password:</label>
+            <input type="password" id="loginPassword" required>
+            <button type="button" onclick="loginUser()">Login</button>
+        </form>
+    </div>
+
+    <div id="homePage" style="display: none;">
+        <div class="navbar">
+            <a href="#" onclick="showHome()">Home</a>
+            <a href="#" onclick="showPayBill()">Pay Bill</a>
+            <a href="#" onclick="showRegisterComplaint()">Register Complaint</a>
+            <a href="#" onclick="showComplaintStatus()">Complaint Status</a>
+            <span class="right">Welcome, <span id="welcomeUser"></span> | <a href="#" onclick="logoutUser()">Logout</a></span>
+        </div>
+        <div class="container" id="billContainer" style="display: none;">
+            <h2>Pay Bill</h2>
+            <input type="checkbox" class="bill" value="50" onclick="calculateTotal()"> Bill 1 - $50 <br>
+            <input type="checkbox" class="bill" value="30" onclick="calculateTotal()"> Bill 2 - $30 <br>
+            <input type="checkbox" class="bill" value="20" onclick="calculateTotal()"> Bill 3 - $20 <br>
+            <p>Total Amount: $<span id="totalAmount">0</span></p>
+            <button onclick="proceedToPay()">Proceed to Pay</button>
+        </div>
+    </div>
+
+    <script src="US2.js"> </script>
+</body>
+</html>
